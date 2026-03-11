@@ -102,14 +102,17 @@ cp config.example.json ~/.openclaw/skills/free-image-gen/config.json
 脚本会按以下优先级查找配置文件：
 
 1. **环境变量**：`FREE_IMAGE_GEN_CONFIG`（最高优先级）
-2. **当前工作目录**：
+2. **技能安装目录**：`~/.openclaw/skills/free-image-gen/config.json`（优先）
+3. **独立技能配置目录**：`~/.openclaw/skills/config/free-image-gen/config.json`（备选，卸载技能不影响配置）
+4. **当前工作目录**：
    - `./skills/free-image-gen/config.json`
    - `./.free-image-gen/config.json`
-3. **全局技能配置**：`~/.openclaw/skills/free-image-gen/config.json`（**推荐**）
-4. **全局配置**：`~/.openclaw/free-image-gen/config.json`（向后兼容）
-5. **技能目录**：`config.json`
+5. **旧版全局配置**：`~/.openclaw/skill/free-image-gen/config.json`（向后兼容）
+6. **技能目录**：`config.json`
 
 找到第一个存在的配置文件就会加载，后续的路径会被忽略。
+
+> **注意**：推荐将配置文件放在 `~/.openclaw/skills/config/` 目录下，独立于技能安装目录，卸载重装技能不会丢失配置。
 
 ### 配置文件示例
 
