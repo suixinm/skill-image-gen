@@ -1,5 +1,5 @@
 ---
-name: free-image-gen
+name: skill-image-gen
 description: 免费AI图片生成工具，使用Gitee AI API生成图片，支持本地保存和腾讯云COS上传。适用于需要免费图片生成的场景。
 ---
 
@@ -49,7 +49,7 @@ python scripts/main.py --prompt "一只可爱的小狗"
 请输入你的 Gitee AI API Key: [用户输入API Key]
 ```
 
-配置完成后，配置文件会自动保存到：`~/.openclaw/skills/free-image-gen/config.json`
+配置完成后，配置文件会自动保存到：`~/.openclaw/skills/skill-image-gen/config.json`
 
 ### 方法二：通过对话配置（AI Agent 使用）
 
@@ -94,20 +94,20 @@ IMAGE_OUTPUT_PATH=./output
 复制配置模板并修改：
 
 ```bash
-cp config.example.json ~/.openclaw/skills/free-image-gen/config.json
+cp config.example.json ~/.openclaw/skills/skill-image-gen/config.json
 ```
 
 ### 配置文件查找优先级
 
 脚本会按以下优先级查找配置文件：
 
-1. **环境变量**：`FREE_IMAGE_GEN_CONFIG`（最高优先级）
-2. **技能安装目录**：`~/.openclaw/skills/free-image-gen/config.json`（优先）
-3. **独立技能配置目录**：`~/.openclaw/skills/config/free-image-gen/config.json`（备选，卸载技能不影响配置）
+1. **环境变量**：`SKILL_IMAGE_GEN_CONFIG`（最高优先级）
+2. **技能安装目录**：`~/.openclaw/skills/skill-image-gen/config.json`（优先）
+3. **独立技能配置目录**：`~/.openclaw/skills/config/skill-image-gen/config.json`（备选，卸载技能不影响配置）
 4. **当前工作目录**：
-   - `./skills/free-image-gen/config.json`
-   - `./.free-image-gen/config.json`
-5. **旧版全局配置**：`~/.openclaw/skill/free-image-gen/config.json`（向后兼容）
+   - `./skills/skill-image-gen/config.json`
+   - `./.skill-image-gen/config.json`
+5. **旧版全局配置**：`~/.openclaw/skill/skill-image-gen/config.json`（向后兼容）
 6. **技能目录**：`config.json`
 
 找到第一个存在的配置文件就会加载，后续的路径会被忽略。
@@ -207,7 +207,7 @@ result = generator.generate(
 ## 目录结构
 
 ```
-free-image-gen/
+skill-image-gen/
 ├── SKILL.md              # 本说明文件
 ├── config.example.json   # 配置示例文件
 ├── scripts/
@@ -219,7 +219,7 @@ free-image-gen/
 └── requirements.txt      # Python 依赖
 ```
 
-**用户配置文件位置**：`~/.openclaw/skills/free-image-gen/config.json`（推荐）
+**用户配置文件位置**：`~/.openclaw/skills/skill-image-gen/config.json`（推荐）
 
 ## 常见问题
 

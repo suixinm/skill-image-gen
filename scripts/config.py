@@ -56,24 +56,24 @@ class Config:
         script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         
         # 1. 环境变量指定的路径（最高优先级）
-        env_path = os.getenv('FREE_IMAGE_GEN_CONFIG')
+        env_path = os.getenv('SKILL_IMAGE_GEN_CONFIG')
         if env_path:
             paths.append(env_path)
         
         # 2. 技能安装目录下的配置（优先，方便开发调试）
-        paths.append(os.path.join(home_dir, '.openclaw', 'skills', 'free-image-gen', 'config.json'))
+        paths.append(os.path.join(home_dir, '.openclaw', 'skills', 'skill-image-gen', 'config.json'))
         
         # 3. 独立技能配置目录（不受技能卸载影响，备选）
-        paths.append(os.path.join(home_dir, '.openclaw', 'skills', 'config', 'free-image-gen', 'config.json'))
+        paths.append(os.path.join(home_dir, '.openclaw', 'skills', 'config', 'skill-image-gen', 'config.json'))
         
         # 4. 当前工作目录下的配置
         cwd = os.getcwd()
-        paths.append(os.path.join(cwd, 'skills', 'free-image-gen', 'config.json'))
-        paths.append(os.path.join(cwd, '.free-image-gen', 'config.json'))
+        paths.append(os.path.join(cwd, 'skills', 'skill-image-gen', 'config.json'))
+        paths.append(os.path.join(cwd, '.skill-image-gen', 'config.json'))
         
         # 5. 旧版全局配置（向后兼容）
-        paths.append(os.path.join(home_dir, '.openclaw', 'skill', 'free-image-gen', 'config.json'))
-        paths.append(os.path.join(home_dir, '.openclaw', 'free-image-gen', 'config.json'))
+        paths.append(os.path.join(home_dir, '.openclaw', 'skill', 'skill-image-gen', 'config.json'))
+        paths.append(os.path.join(home_dir, '.openclaw', 'skill-image-gen', 'config.json'))
         
         # 6. 技能所在目录
         paths.append(os.path.join(script_dir, 'config.json'))
@@ -201,7 +201,7 @@ class Config:
         try:
             # 确定保存路径（使用独立的技能配置目录，不受技能卸载影响）
             home_dir = os.path.expanduser('~')
-            save_dir = os.path.join(home_dir, '.openclaw', 'skills', 'config', 'free-image-gen')
+            save_dir = os.path.join(home_dir, '.openclaw', 'skills', 'config', 'skill-image-gen')
             save_path = os.path.join(save_dir, 'config.json')
             
             # 创建目录
